@@ -28,7 +28,7 @@ The dataset contains retail sales transactions with customer details, product ca
 
 ## Database 
 A database named `retail_db` was created to import and store the retail sales data. The dataset was **imported into the database** by right-clicking on the Table created in the database, selecting **Table Data Import Wizard** and browsing the `.csv` file.
-<img width="348" height="563" alt="image" src="https://github.com/user-attachments/assets/7b2ac5fb-8b77-4ecb-b0af-372942d292eb" />
+![Table Data Import Wizard](images/Import%20wizard.png)
 
 ## Table creation
 A table named `retail_sales` was created which contained the same column headings as that of the `.csv` file to smoothly import the data.
