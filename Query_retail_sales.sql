@@ -106,3 +106,5 @@ select category, sum(total_sale) revenue, round(sum(total_sale)/(
 									select sum(total_sale) from retail_sales
                                     )*100,2) as share_percentage 
 from retail_sales group by category;
+
+-- END
