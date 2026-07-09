@@ -15,7 +15,7 @@ This document contains the SQL queries used to solve the business problems ident
 10. Analyze Orders by Shift
 11. Identify the Best-Selling Month of Each Year
 12. Additional Business Analysis
-13. Conclusion
+
 
 ---
 
@@ -25,6 +25,8 @@ This document contains the SQL queries used to solve the business problems ident
 select * from retail_sales where sale_date='2022-11-05';
 ```
 
+![1](images/1.png)
+
 ---
 
 ## 2. Identify High-Volume Clothing Purchases
@@ -32,6 +34,9 @@ select * from retail_sales where sale_date='2022-11-05';
 ```sql
 select * from retail_sales where category='Clothing' and quantity>3 and month(sale_date)=11 and year(sale_date)=2022;
 ```
+
+![](images/2.png)
+
 
 ---
 
@@ -41,6 +46,8 @@ select * from retail_sales where category='Clothing' and quantity>3 and month(sa
 select category, sum(total_sale) as Total_Sales from retail_sales group by category;
 ```
 
+![](images/3.png)
+
 ---
 
 ## 4. Determine the Average Age of Beauty Customers
@@ -49,6 +56,8 @@ select category, sum(total_sale) as Total_Sales from retail_sales group by categ
 select category, round(avg(age),1) as Avg_Age from retail_sales where category='Beauty';
 ```
 
+![](images/4.png)
+
 ---
 
 ## 5. Identify High-Value Transactions
@@ -56,6 +65,7 @@ select category, round(avg(age),1) as Avg_Age from retail_sales where category='
 ```sql
 select * from retail_sales where total_sale>1000;
 ```
+![](images/5.png)
 
 ---
 
@@ -64,6 +74,7 @@ select * from retail_sales where total_sale>1000;
 ```sql
 select category, gender, count(transactions_id) as count from retail_sales group by gender, category order by category;
 ```
+![](images/6.png)
 
 ---
 
@@ -73,6 +84,7 @@ select category, gender, count(transactions_id) as count from retail_sales group
 select monthname(sale_date) as 'Month', round(avg(total_sale),2) as Average 
 from retail_sales where year(sale_date)=2023 group by monthname(sale_date) order by 2 desc;
 ```
+![](images/7.png)
 
 ---
 
@@ -81,6 +93,7 @@ from retail_sales where year(sale_date)=2023 group by monthname(sale_date) order
 ```sql
 select customer_id, sum(total_sale) from retail_sales group by customer_id order by 2 desc limit 5;
 ```
+![](images/8.png)
 
 ---
 
@@ -89,6 +102,7 @@ select customer_id, sum(total_sale) from retail_sales group by customer_id order
 ```sql
 select category, count(distinct customer_id) unq_cust from retail_sales group by category;
 ```
+![](images/9.png)
 
 ---
 
@@ -102,6 +116,7 @@ select 	case
 		end as shift, 
         count (*) as Total_Orders from retail_sales group by 1;
 ```
+![](images/10.png)
 
 ---
 
@@ -115,10 +130,11 @@ select monthname(sale_date) as 'Month', year(sale_date) as 'year', sum(total_sal
         ) as 'rnk'
         from retail_sales group by 1, 2) as Highest_sale where rnk=1;
 ```
+![](images/11.png)
 
 ---
 
-# Additional Business Analysis
+# Additional Analysis
 
 Beyond the core business questions, two additional analyses were performed to gain deeper insights into customer spending patterns and category-wise revenue distribution.
 
@@ -131,6 +147,7 @@ select customer_id, category, sales, rnk as 'RANK' from (
         ) as rnk from retail_sales group by customer_id, category
         ) as ranked_sales where rnk in (1,2,3);
 ```
+![](images/E1.png)
 
 ---
 
@@ -142,9 +159,6 @@ select category, sum(total_sale) revenue, round(sum(total_sale)/(
                                     )*100,2) as share_percentage 
 from retail_sales group by category;
 ```
+![](images/E2.png)
 
 ---
-
-# Conclusion
-
-The SQL queries presented in this document address a range of business problems related to sales performance, customer behavior, product categories, and purchasing trends. Together with the exploratory data analysis, they demonstrate how SQL can be used to transform raw retail transaction data into meaningful business insights for informed decision-making.
