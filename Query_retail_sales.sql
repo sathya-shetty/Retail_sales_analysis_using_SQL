@@ -43,8 +43,13 @@ select * from retail_sales where
                             
 -- DATA EXPLORATION -------------------------------------------------------------------------------------
 select sum(total_sale) as Total_Sales from retail_sales; 								-- Total revenue
+
 select category, sum(total_sale) as Total_Sales from retail_sales group by category; 	-- Sales By Category
+
 select count(distinct(customer_id)) as Total_Customers from retail_sales;				-- Customer Count
+
+select dayname(sale_date) as 'Day', sum(quantity) Units_sold, sum(total_sale) Revenue 
+from retail_sales group by 1 order by 3 desc;											-- Highest revenue generating day
 
 -- KEY ISSUES -------------------------------------------------------------------------------------------
 
