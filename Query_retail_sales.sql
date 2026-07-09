@@ -1,4 +1,4 @@
--- SQL Reatil Sales Analysis Project
+-- SQL Retail Sales Analysis Project
 
 -- Creating the database
 create database retail_db;
