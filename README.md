@@ -194,3 +194,16 @@ The project answers a set of real-world business questions using SQL by analysin
 | 11 | Identify the **best-selling month** of each year using SQL window functions. |
 
 📄 **Detailed SQL queries, outputs, and observations are available in [FINDINGS.md](FINDINGS.md).**
+
+---
+
+## Results and Findings
+Given below are the observations from the output obtained after running the queries mentioned in `FINDINGS.md`:
+1. A total of **11 transactions** were recorded on 5 November 2025 ranging between all three categories **indicating distribution of demand** on that day.
+2. There were several (16 transactions) high value purchases in clothing category on Nov 2022.
+3. **Electronics** generated the highest total revenue (**311,445**), then **Clothing** (**309,995**) and **Beauty** (**286,790**).
+4. The average age of customers purchasing from Beauty category was **40.4 years**.
+5. **306** high revenue transactions (total sale exceeding 1000) were recorded indicating possibility of stronger purchasing power.
+6. There were balanced distribution of customers based on gender in category with **female customers being relatively higher in Beauty category and slightly higher Male customers in Electronics and Clothing.**
+7. **February 2023** recorded the highest average monthly sale (**535.53**), while **March** recorded the lowest (**394.81**).
+
