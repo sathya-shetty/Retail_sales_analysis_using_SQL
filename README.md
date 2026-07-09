@@ -174,3 +174,23 @@ from retail_sales group by 1 order by 3 desc;
 4. **Sunday** was the best-performing day of the week, recording both the **highest revenue (152,800)** and the **highest number of units sold (803)**, suggesting increased customer activity during weekends.
 
 EDA provided a better understanding on the store's sales performance, demand pattern, purchasing patterns and revenue distribution.
+
+## Business Problems
+
+The project answers a set of real-world business questions using SQL by analysing the retail sales database.
+
+| No. | Business Question |
+|:---:|-------------------|
+| 1 | Retrieve all sales transactions made on **5 November 2022**. |
+| 2 | Identify **Clothing** purchases where the quantity sold was **greater than 3** during **November 2022**. |
+| 3 | Calculate the **total revenue generated** by each product category. |
+| 4 | Determine the **average age** of customers purchasing products from the **Beauty** category. |
+| 5 | Identify **high-value transactions** where the total sale exceeded **1,000**. |
+| 6 | Analyze the **number of transactions** made by each gender across different product categories. |
+| 7 | Calculate the **average monthly sales** for the year **2023**. |
+| 8 | Identify the **Top 5 customers** based on their total purchase value. |
+| 9 | Determine the **number of unique customers** purchasing from each product category. |
+| 10 | Classify transactions into **Morning**, **Afternoon**, and **Evening** shifts based on purchase time and determine the number of orders in each shift. |
+| 11 | Identify the **best-selling month** of each year using SQL window functions. |
+
+📄 **Detailed SQL queries, outputs, and observations are available in [FINDINGS.md](FINDINGS.md).**
