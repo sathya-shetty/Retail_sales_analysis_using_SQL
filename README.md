@@ -146,3 +146,31 @@ from retail_sales;
 ```
 The dataset contains transactions from **155 unique customers**, providing a diverse customer base for further analysis.
 
+---
+
+### Sales Performance by Day of the Week
+
+```sql
+select dayname(sale_date) as 'Day', sum(quantity) Units_sold, sum(total_sale) Revenue 
+from retail_sales group by 1 order by 3 desc;
+```
+
+| Day | Units Sold | Revenue |
+|-----|-----------:|---------:|
+| Sunday | 803 | 152,800 |
+| Monday | 720 | 147,575 |
+| Saturday | 783 | 141,400 |
+| Thursday | 691 | 122,585 |
+| Friday | 722 | 120,605 |
+| Wednesday | 662 | 120,420 |
+| Tuesday | 614 | 102,845 |
+
+---
+
+### Findings from EDA:
+1. The store generated a **total revenue of 908,230** from **1,987 transactions** consisting of **155 unique customers**.
+2. **Electronics** was the highest revenue generating category followed by **Clothing** and **Beauty** respectively.
+3. Revenue accross the 3 segments are balanced, indicating a well-distributed demand rather than indivdual domination.
+4. **Sunday** was the best-performing day of the week, recording both the **highest revenue (152,800)** and the **highest number of units sold (803)**, suggesting increased customer activity during weekends.
+
+EDA provided a better understanding on the store's sales performance, demand pattern, purchasing patterns and revenue distribution.
