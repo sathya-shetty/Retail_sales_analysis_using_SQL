@@ -206,4 +206,16 @@ Given below are the observations from the output obtained after running the quer
 5. **306** high revenue transactions (total sale exceeding 1000) were recorded indicating possibility of stronger purchasing power.
 6. There were balanced distribution of customers based on gender in category with **female customers being relatively higher in Beauty category and slightly higher Male customers in Electronics and Clothing.**
 7. **February 2023** recorded the highest average monthly sale (**535.53**), while **March** recorded the lowest (**394.81**).
+8. **Customer_id 3** was the highest spending customer.
+9. **Clothing** category attracted the highest number of unique customers.
+10. **Evening** shift recorded higher orders (**1,275**) compared to both morning (**548**) and evening (**164**).
 
+#### December emerged as the best selling month in both years, generating 71,880 in 2022 and 69,145 in 2023.
+
+The additional analysis conducted identified the Top 3 highest spending customer in each category. This was achieved using sub-query and `rank()` function.
+Revenue distribution between categories was also calculated to find out the percentage share of each category in revenue. The revenue happened to well-distributed amongst the three showing that there is balanced demand for these categories in the store.
+| Category | Revenue | Revenue Contribution |
+|----------|--------:|---------------------:|
+| Beauty | 286,790 | 31.58% |
+| Clothing | 309,995 | 34.13% |
+| Electronics | 311,445 | 34.29% |
