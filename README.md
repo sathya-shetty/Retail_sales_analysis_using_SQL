@@ -28,6 +28,8 @@ The dataset contains retail sales transactions with customer details, product ca
 
 ## Database 
 A database named `retail_db` was created to import and store the retail sales data. The dataset was **imported into the database** by right-clicking on the Table created in the database, selecting **Table Data Import Wizard** and browsing the `.csv` file.
+
+
 ![Table Data Import Wizard](images/Import%20wizard.png)
 
 ## Table creation
@@ -56,7 +58,7 @@ Before performing the analysis, the imported dataset was validated to ensure con
 - Renamed the incorrectly named `quantiy` column to `quantity`.
 - Verified the total number of records imported into the table.
 - Checked all columns for missing (`NULL`) values.
-- Confirmed whether the values were ready to perform further analysis.
+- Confirmed whether the values were ready for further analysis.
 
 ### Preview the Data
 To check whether the respective columns have appropriate values after importing.	
@@ -110,7 +112,7 @@ No `NULL` values were found in any of the columns, indicating that the dataset w
 
 After verifying and cleaning the dataset, an initial exploratory analysis was performed to understand the overall sales performance and customer base before answering specific business questions.
 
-Given below are the few findings:
+Key takeaways are summarized below:
 
 ### Total Revenue
 
@@ -170,8 +172,8 @@ from retail_sales group by 1 order by 3 desc;
 ### Findings from EDA:
 1. The store generated a **total revenue of 908,230** from **1,987 transactions** consisting of **155 unique customers**.
 2. **Electronics** was the highest revenue generating category followed by **Clothing** and **Beauty** respectively.
-3. Revenue accross the 3 segments are balanced, indicating a well-distributed demand rather than indivdual domination.
-4. **Sunday** was the best-performing day of the week, recording both the **highest revenue (152,800)** and the **highest number of units sold (803)**, suggesting increased customer activity during weekends.
+3. Revenue across the 3 segments are balanced, indicating a well-distributed demand rather than dependence on single category.
+4. **Sunday** was the best performing day of the week, recording both the **highest revenue (152,800)** and the **highest number of units sold (803)**, suggesting increased customer activity during weekends.
 
 EDA provided a better understanding on the store's sales performance, demand pattern, purchasing patterns and revenue distribution.
 
@@ -198,24 +200,58 @@ The project answers a set of real-world business questions using SQL by analysin
 ---
 
 ## Results and Findings
-Given below are the observations from the output obtained after running the queries mentioned in `FINDINGS.md`:
-1. A total of **11 transactions** were recorded on 5 November 2025 ranging between all three categories **indicating distribution of demand** on that day.
-2. There were several (16 transactions) high value purchases in clothing category on Nov 2022.
+The following observations were derived from the SQL queries documented in `FINDINGS.md`:
+1. A total of **11 transactions** were recorded on 5 November 2022 ranging between all three categories **indicating distribution of demand** on that day.
+2. **16 high value purchases** in clothing category were recorded on November 2022.
 3. **Electronics** generated the highest total revenue (**311,445**), then **Clothing** (**309,995**) and **Beauty** (**286,790**).
 4. The average age of customers purchasing from Beauty category was **40.4 years**.
-5. **306** high revenue transactions (total sale exceeding 1000) were recorded indicating possibility of stronger purchasing power.
+5. **306** high revenue transactions (total sale exceeding 1000) were recorded indicating presence of high value purchasing customers.
 6. There were balanced distribution of customers based on gender in category with **female customers being relatively higher in Beauty category and slightly higher Male customers in Electronics and Clothing.**
 7. **February 2023** recorded the highest average monthly sale (**535.53**), while **March** recorded the lowest (**394.81**).
-8. **Customer_id 3** was the highest spending customer.
+8. **Customer ID 3** was the highest spending customer.
 9. **Clothing** category attracted the highest number of unique customers.
-10. **Evening** shift recorded higher orders (**1,275**) compared to both morning (**548**) and evening (**164**).
+10. **Evening** shift recorded higher orders (**1,275**) compared to both morning (**548**) and afternoon (**164**).
+11. **December emerged as the best selling month in both years, generating 71,880 in 2022 and 69,145 in 2023.**
 
-#### December emerged as the best selling month in both years, generating 71,880 in 2022 and 69,145 in 2023.
-
-The additional analysis conducted identified the Top 3 highest spending customer in each category. This was achieved using sub-query and `rank()` function.
-Revenue distribution between categories was also calculated to find out the percentage share of each category in revenue. The revenue happened to well-distributed amongst the three showing that there is balanced demand for these categories in the store.
+The additional analysis conducted identified the Top 3 highest spending customer in each category. This was achieved using subquery and `rank()` window function.
+Revenue distribution between categories was also calculated to find out the percentage share of each category in revenue. The revenue was well-distributed across the three categories showing that there is balanced demand in the store.
 | Category | Revenue | Revenue Contribution |
 |----------|--------:|---------------------:|
 | Beauty | 286,790 | 31.58% |
 | Clothing | 309,995 | 34.13% |
 | Electronics | 311,445 | 34.29% |
+
+## Recommendations
+Below are the few recommendations I would like to suggest to boost the sales performance and further enhance the functioning efficiency of the retail store.
+- **Customer loyalty programs** can be introduced for high-value customers to encourage repeat purchases and improve customer retention.
+- **Run offers and discounts** on low average days and during lower performing periods.
+- **Increase staff and inventory** during weekends to ensure the high demand is satisfied.
+- Use customer demographics data of different categories to **design more targeted marketing campaigns.**
+
+## Conclusion
+This project demonstrates the practical application of **MySQL** in solving real-world business problems through data analysis. It showcases the use of SQL for **database creation**, **data cleaning**, **exploratory data analysis (EDA)**, and **window functions** to transform raw retail transaction data into meaningful business insights.
+
+The analysis revealed key trends in **sales performance**, **customer purchasing behavior**, **product category performance**, **weekly demand patterns**, and **customer segmentation**. Additional analyses further identified **top spending customers** and the **revenue contribution share** of each product category, providing valuable insights beyond what could be observed from the raw dataset alone.
+
+Overall, the project demonstrates the practical application of key SQL concepts, including **data filtering**, **aggregation**, **subqueries**, **CASE statements**, **date functions**, and **window functions**, to support informed decision making.
+
+
+
+--- 
+### Credits
+
+- **Dataset and questions:** Adapted from the najirh github.
+- **SQL queries, analysis, findings, documentation, and repository structure:** Developed independently for this project.
+
+
+## Author
+
+**Sathya Prasad N Shetty**
+
+MSc. Business Analytics student. This project is my attempt to solve a retail business problem using the SQL concepts I've learned so far, while continuing to improve my analytical and problem solving skills.
+
+
+- **GitHub:** [sathya-shetty](https://github.com/sathya-shetty)
+- **LinkedIn:** [Sathya Prasad N Shetty](https://www.linkedin.com/in/sathyaprasadnshetty/)
+
+Feel free to connect if you'd like to discuss data analytics, share feedback, or collaborate on projects.
